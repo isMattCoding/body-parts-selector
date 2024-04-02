@@ -1,0 +1,69 @@
+@import "./colors";
+
+body {
+  color: --primary-contentA;
+}
+
+a {
+  text-decoration: none;
+  color: --primary-contentA;
+}
+
+h1,
+h3,
+h4 {
+  font-family: 'Quicksand', sans-serif;;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h3,
+h4 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+h4 {
+  margin-block-end: 0;
+}
+
+p {
+  font-family: 'Arvo', serif;;
+  font-size: .75rem;
+  letter-spacing: 0.02rem;
+}
+
+header {
+  font-family: 'Arvo', serif;;
+}
+
+.about-section p span.span-highlighted,
+h4>span.span-highlighted {
+  background-color: var(--content-accent);
+}
+
+.projects-list div.projects-list__project-title {
+  background-color: var(--elevation-high);
+}
+
+
+.projects-list h3.projects-list__project-name {
+  color: var(--primary-contentA)
+
+}
+
+.projects-list h4.projects-list__project-client {
+  color: var(--secondary-content)
+}
+
+.projects-list div.projects-list__project-links>a.projects-list__project-link {
+  background-color: var(--content-accent);
+  color: var(--secondary-content-accent)
+}
+
+.contact-container input.contact-container__input {
+  font-family: 'Arvo', serif;;
+}

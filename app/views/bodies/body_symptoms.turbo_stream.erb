@@ -1,0 +1,6 @@
+<%= turbo_stream.replace("body_symptoms_modal") do %>
+  <div id="body_symptoms_modal" data-health-questionnaire-target="bodySymptomsModal" data-list="<%= @link %>" class="fixed top-0 left-0 w-full flex justify-center items-center">
+    <p id="linkValue" style="display:none" data-health-questionnaire-target="bodySymptomsModalValue"><%= @link %></p>
+    <%= render partial: "shared/body_symptoms_zoom", locals: {side: @side} %>
+  </div>
+<% end %>

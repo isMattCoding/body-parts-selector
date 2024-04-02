@@ -1,0 +1,43 @@
+<div class="health-questionnaire-page">
+  <div class="health-questionnaire-page-intro">
+      <h2 class="questionnaire-page-title title-health-questionnaire">Questionnaire de santé</h2>
+  </div>
+
+  <%= form_with(model: @body, class: "form-questionnaire") do |f| %>
+    <div class="questionnaire-container-inner" data-controller="health-questionnaire validations">
+      <div id="link-to-body-symptoms-modal" class="questionnaire-fifth-part questionnaire-section">
+        <h4 class="question-title" id="body_symptoms_title">Indique les endroits où tu as des symptômes</h4>
+        <div class="perso-container flex justify-evenly h">
+          <%= f.text_field :parts,
+            hidden: true,
+            data: {
+              health_questionnaire_target: "outputBodySymptoms",
+              validations_target: "bodySymptomsInput"
+            },
+            value: ""
+          %>
+          <% body_sides = ["front", "back"] %>
+          <% body_sides.each_with_index do |side, index| %>
+            <div class="perso-<%=side%> perso flex flex-col items-center">
+              <p><%= side %></p>
+              <%= link_to body_symptoms_path(side), class: "link-to-body-symptoms-modal", data: { turbo_method: :post, turbo_frame: "questionnaire_perso_#{side}_modal" } do %>
+                <%= inline_svg_tag "body/dezoom_body_#{side}.svg", class: "dezoomed-body-svg h-80 w-40"  %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
+      <div class="submit-questionnaire">
+        <%= f.submit value: "Valider", data: { action: "click->validations#checkIfChecked"}, class: "body-symptoms-selector-submit h-14 w-80 rounded-lg text-white text-sm leading-4 mt-2 w-11/12 max-w-[31.25rem] rounded-xl h-9 flex justify-center items-center flex-row" %>
+      </div>
+
+      <div id="body_symptoms_modal" data-health-questionnaire-target="bodySymptomsModal">
+
+      </div>
+
+    </div>
+  <% end %>
+</div>

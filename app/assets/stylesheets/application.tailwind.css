@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "font";
+@import "colors";
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+ .selection.active-body-part {
+   fill: #662F94;
+ }
+
+  .selection.active-body-part.articulation {
+    fill: #5D5FEF;
+  }
+
+  .skiptocontent {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: #000;
+    color: #fff;
+    opacity: 0;
+  }
+
+body, #body_symptoms_modal {
+
+  background-color: #160727;
+  color: white;
+}
+
+.wmbt-header {
+  border-bottom: 3px solid #1f0a38;
+}
+
+.body-list-item {
+  background-color: #1f0a38;
+}
+
+.body-symptoms-selector-submit {
+  background-color: #4e198b;
+}

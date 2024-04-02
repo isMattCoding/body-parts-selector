@@ -1,0 +1,9 @@
+
+<div class="body-symptoms-modal h-screen flex justify-center items-center flex-col" data-controller="body-parts-modal">
+  <div class="model-body-symptoms-selector h-4/5">
+    <%= inline_svg_tag "body/zoom_body_#{side}.svg"  %>
+  </div>
+  <%= button_tag(type: 'button', class: "body-symptoms-selector-submit h-14 w-80 rounded-lg text-white text-sm leading-4 mt-2 w-11/12 max-w-[31.25rem] rounded-xl h-9 flex justify-center items-center flex-row", data: {action: "click->health-questionnaire#close"}) do %>
+    <%= "Continuer"%>
+  <% end %>
+</div>

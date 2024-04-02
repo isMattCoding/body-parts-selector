@@ -1,0 +1,24 @@
+<div class="health-questionnaire-page" data-controller="health-questionnaire">
+  <div class="health-questionnaire-page-intro">
+      <h2 class="questionnaire-page-title title-health-questionnaire text-4xl">Questionnaires</h2>
+  </div>
+
+  <ul>
+  <% @bodys.each_with_index do |body, index| %>
+    <li class="body-list-item m-4 p-4 rounded-lg" data-health-questionnaire-target="bodySymptomsSvgDezoom" data-list="<%= body.parts %>">
+    <h2>body <%= index %></h2>
+      body parts: <%= body.parts %>
+      <div class="flex justify-center">
+        <% body_sides = ["front", "back"] %>
+        <% body_sides.each_with_index do |side, index| %>
+          <div class="perso-<%=side%> perso">
+            <p><%= side %></p>
+            <%= inline_svg_tag "body/dezoom_body_#{side}.svg", class: "dezoomed-body-svg h-64" %>
+          </div>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Body", new_body_path, class: "body-symptoms-selector-submit h-14 w-80 rounded-lg text-white text-sm leading-4 mt-2 w-11/12 max-w-[31.25rem] rounded-xl h-9 flex justify-center items-center flex-row mx-auto mb-10" %>
+</div>
