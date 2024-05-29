@@ -1,4 +1,4 @@
-class BodyValidator < ActiveModel::Validator
+class PartsValidator < ActiveModel::EachValidator
 
   POSSIBLE_PARTS = %w(
     back-knee-right back-shoulder-left back-elbow-left back-head back-upper-arm-left back-forearm-left
@@ -11,12 +11,12 @@ class BodyValidator < ActiveModel::Validator
     front-hand-left front-hand-right
   )
 
-  def validate(record)
-    unless record.parts.is_a?(String) && record.parts.match(/\A[^0-9]*\z/)
+  def validate_each(record, attribute, value)
+    unless value.is_a?(String) && value.match(/\A[^0-9]*\z/)
       record.errors.add(:parts, "must be a string and not contain numbers")
     end
 
-    parsed_parts = parse_parts(record.parts)
+    parsed_parts = parse_parts(value)
     if parsed_parts.empty?
       record.errors.add(:parts, "contains invalid parts")
     else

@@ -1,3 +1,3 @@
 class Body < ApplicationRecord
-  validates_with BodyValidator
+  validates :parts, presence: false, parts: true
 end

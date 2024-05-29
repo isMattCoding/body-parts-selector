@@ -8,7 +8,7 @@ RSpec.describe BodiesController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    { parts: 1 }
+    { parts: "" }
   }
 
   let(:body) { Body.create! valid_attributes }
