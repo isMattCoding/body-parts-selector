@@ -77,4 +77,7 @@ gem "tailwindcss-rails", "~> 2.3"
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.0'
+  gem 'capybara'
+  gem "launchy"
+  gem "selenium-webdriver"
 end
