@@ -25,6 +25,13 @@ To get started with Body Parts Selector, follow these steps:
     rails db:migrate
   ```
 
+4. Initialise Tailwind:
+
+  ```bash
+    rails tailwindcss:install
+    rails tailwindcss:build
+  ```
+
 ## Running the Application
 To run Body Parts Selector locally, use the following command:
 
