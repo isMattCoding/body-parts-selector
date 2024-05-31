@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "UserJourneys", type: :feature do
   before do
-
-  Capybara.default_driver = :selenium
-
+    Capybara.default_driver = :selenium
   end
   scenario "User can complete a new questionnaire", js: true do
     visit root_path

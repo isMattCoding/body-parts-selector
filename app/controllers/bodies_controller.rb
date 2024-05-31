@@ -1,6 +1,6 @@
 class BodiesController < ApplicationController
   def index
-    @bodys = Body.all
+    @bodies = Body.all
   end
 
   def show
