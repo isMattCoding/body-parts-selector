@@ -4,7 +4,7 @@
   </div>
 
   <ul>
-  <% @bodys.each_with_index do |body, index| %>
+  <% @bodies.each_with_index do |body, index| %>
     <li class="body-list-item m-4 p-4 rounded-lg" data-health-questionnaire-target="bodySymptomsSvgDezoom" data-list="<%= body.parts %>">
     <h2>body <%= index %></h2>
       body parts: <%= body.parts %>
