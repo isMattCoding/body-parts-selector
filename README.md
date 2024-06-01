@@ -2,6 +2,8 @@
 
 Welcome to Body Parts Selector! This application demonstrates how one can create SVG images that can be used as form input in a Rails app using Hotwire and Turbo.
 
+![Screenshot of an svg outlining the parts of the body, with some body parts selected](https://github.com/isMattCoding/body-parts-selector/blob/main/public/screenshot.png)
+
 ## Getting Started
 
 To get started with Body Parts Selector, follow these steps:
