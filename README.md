@@ -58,6 +58,29 @@ To complete a questionnaire in Body Parts Selector, follow these steps:
 
 That's it! You have now completed a questionnaire in Body Parts Selector.
 
+
+## How It Works
+* __Overview__: Body Parts Selector enables users to interactively select body parts using SVG images within a Rails application enhanced by Hotwire and Turbo.
+
+* __Navigating__:
+  * Users visit the index page to view all existing body records.
+  * SVG images (front and back of the body).
+
+* __Selecting Body Parts__:
+  * Clicking an SVG opens a larger modal version of the image.
+  * Users can click body parts to select or deselect them. Selected parts are highlighted and added to a hidden text input.
+
+* __Using Stimulus and Turbo__:
+  * __Stimulus Controller__: Manages the selection of body parts. Adds or removes classes to highlight selected parts and updates the hidden input.
+  * __Turbo Frames__: Used to load and display the modal. When a body part is selected, Turbo updates the hidden input with the selected parts.
+  * __Turbo Streams__: When the form is submitted, Turbo Streams handle the response, updating the page without a full reload.
+
+* __Saving and Viewing__:
+  * After selecting body parts, users close the modal and submit the form.
+  * The selected parts are saved as a parts attribute in the database.
+  * Users can view all saved records on the index page.
+
+
 ## Contributing
 If you'd like to contribute to Body Parts Selector, please fork the repository and submit a pull request. We welcome contributions of all kinds, including bug fixes, feature enhancements, and documentation improvements.
 
