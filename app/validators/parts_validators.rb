@@ -15,16 +15,20 @@ class PartsValidator < ActiveModel::EachValidator
     unless value.is_a?(String) && value.match(/\A[^0-9]*\z/)
       record.errors.add(:parts, "must be a string and not contain numbers")
     end
-
-    parsed_parts = parse_parts(value)
-    if parsed_parts.empty?
-      record.errors.add(:parts, "contains invalid parts")
+    if value.empty?
+      record.parts = ""
     else
-      record.parts = parsed_parts
+      parsed_parts = parse_parts(value)
+      if parsed_parts[:invalid].length > 0
+        record.errors.add(:parts, "contains invalid parts")
+      else
+        record.parts = parsed_parts[:valid]
+      end
     end
   end
 
   def parse_parts(parts_to_parse)
-    parts_to_parse.split(", ").reject { |part| part.empty? || !POSSIBLE_PARTS.include?(part) }.join(", ")
+    parts = parts_to_parse.split(", ").partition { |part| POSSIBLE_PARTS.include?(part) }
+    { valid: parts[0].join(", "), invalid: parts[1].join(", ") }
   end
 end

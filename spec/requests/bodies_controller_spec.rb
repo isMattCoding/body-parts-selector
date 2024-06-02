@@ -10,10 +10,6 @@ RSpec.describe BodiesController, type: :controller do
     valid_attributes_list.map { |attributes| Body.create!(attributes) }
   }
 
-  let(:invalid_attributes) {
-    { parts: "" }
-  }
-
   describe "GET #index" do
     it "returns the created bodies" do
       get :index
